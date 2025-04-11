@@ -8,10 +8,10 @@ import axios from "axios";
 import get from "lodash/get";
 
 const api = axios.create({
-  baseURL: process.env.NODE_ENV === "production" ? "http://synthea.us-east-1.elasticbeanstalk.com" : "http://localhost:5000",
+  baseURL: process.env.NODE_ENV === "develop" ? "http://localhost:5000" : "http://synthea.us-east-1.elasticbeanstalk.com",
 });
 
-console.log('url', process.env.NODE_ENV === "production" ? "http://synthea.us-east-1.elasticbeanstalk.com" : "http://localhost:5000")
+console.log('url', process.env.NODE_ENV === "develop" ? "http://localhost:5000" : "http://synthea.us-east-1.elasticbeanstalk.com")
 export default function AIChatPro() {
   const [sessionKey, setSessionKey] = useState(null);
   const [inputValue, setInputValue] = useState("")
